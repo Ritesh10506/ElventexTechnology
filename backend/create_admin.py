@@ -8,6 +8,7 @@ from app.core.security import hash_password
 
 db = SessionLocal()
 # updated........
+#......
 
 
 name = input("Admin name: ")
