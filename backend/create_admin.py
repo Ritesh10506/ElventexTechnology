@@ -7,6 +7,8 @@ from app.models.admin import Admin
 from app.core.security import hash_password
 
 db = SessionLocal()
+# updated........
+
 
 name = input("Admin name: ")
 email = input("Admin email: ")
