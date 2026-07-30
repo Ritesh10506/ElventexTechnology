@@ -8,6 +8,7 @@ from app.services.google_oauth_service import (
     get_google_user_info,
 )
 
+from app.core.config import settings
 from app.core.database import get_db
 from app.core.security import create_access_token
 from app.models.customer import Customer
@@ -94,8 +95,5 @@ def google_callback(code: str, db: Session = Depends(get_db)):
 
     access_token = create_access_token({"sub": str(customer.id)})
 
-    return {
-        "access_token": access_token,
-        "token_type": "bearer",
-        "customer": CustomerOut.model_validate(customer),
-    }
+    redirect_url = f"{settings.FRONTEND_ORIGIN}/auth/callback?token={access_token}"
+    return RedirectResponse(redirect_url)

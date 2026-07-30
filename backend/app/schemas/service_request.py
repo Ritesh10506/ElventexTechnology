@@ -1,7 +1,9 @@
 from pydantic import BaseModel
 from datetime import datetime
+from typing import List
 
 from app.models.service_request import ServiceType, RequestStatus
+from app.schemas.media import MediaOut
 
 
 class ServiceRequestCreate(BaseModel):
@@ -15,6 +17,7 @@ class ServiceRequestOut(BaseModel):
     description: str
     status: RequestStatus
     created_at: datetime
+    media_files: List[MediaOut] = []
 
     class Config:
         from_attributes = True
