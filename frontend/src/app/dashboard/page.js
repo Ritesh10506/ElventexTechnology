@@ -1,6 +1,6 @@
 "use client";
+
 import { getToken, logout } from "@/lib/auth";
-import { getToken } from "@/lib/auth";
 import { useEffect, useState } from "react";
 import { getMyRequests, createRequest, uploadMedia } from "@/lib/api";
 // media_files now comes back from the backend on each request,
@@ -82,7 +82,7 @@ export default function Dashboard() {
   return (
     <main>
       <h1>Client Dashboard</h1>
-       <button onClick={logout}>Log out</button>
+      <button onClick={logout}>Log out</button>
 
       {error && <p style={{ color: "red" }}>{error}</p>}
 

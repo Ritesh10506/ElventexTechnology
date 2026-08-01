@@ -1,9 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import { requestOtp, verifyOtp } from "@/lib/api";
+import { getToken } from "@/lib/auth";
 
 export default function Login() {
+  const router = useRouter();
   const [step, setStep] = useState("form"); // "form" | "otp"
   const [name, setName] = useState("");
   const [mobileNumber, setMobileNumber] = useState("");
@@ -11,6 +14,13 @@ export default function Login() {
   const [code, setCode] = useState("");
   const [error, setError] = useState("");
   const [token, setToken] = useState("");
+
+  useEffect(() => {
+    const existingToken = getToken();
+    if (existingToken) {
+      router.push("/dashboard");
+    }
+  }, [router]);
 
   async function handleRequestOtp(e) {
     e.preventDefault();
@@ -30,6 +40,7 @@ export default function Login() {
       const data = await verifyOtp(email, code);
       setToken(data.access_token);
       localStorage.setItem("access_token", data.access_token);
+      router.push("/dashboard");
     } catch (err) {
       setError(err.message);
     }
@@ -39,7 +50,7 @@ export default function Login() {
     return (
       <main>
         <h1>Logged in!</h1>
-        <p>Welcome, {name}. Your token is saved.</p>
+        <p>Welcome, {name}. Redirecting to your dashboard...</p>
       </main>
     );
   }
