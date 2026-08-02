@@ -277,16 +277,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* ---------- Footer ---------- */}
-      <footer className="border-t border-line">
-        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-5 py-8 text-xs text-ink-soft sm:flex-row">
-          <p className="font-[family-name:var(--font-mono)]">
-            [ ELVENTEX ] — WEB &amp; SOFTWARE STUDIO
-          </p>
-          <p>© {new Date().getFullYear()} Elventex Technology. All rights reserved.</p>
-        </div>
-      </footer>
     </main>
   );
 }
