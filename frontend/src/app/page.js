@@ -4,7 +4,7 @@ const SERVICES = [
   {
     tag: "DESIGN",
     title: "Website designing",
-    desc: "A new site built from a blank sheet — structured, fast, and built around what your customers actually came to do.",
+    desc: "A new site built from a blank sheet — structured, insta fast, and built around what your customers actually came to do.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
         <rect x="3" y="4" width="18" height="14" rx="1" />
