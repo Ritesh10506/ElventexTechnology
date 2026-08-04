@@ -7,7 +7,7 @@ import { getMyRequests, createRequest, uploadMedia } from "@/lib/api";
 // so uploads persist across refreshes — no local-only tracking needed
 
 const SERVICE_TYPES = [
-  "website_designing",
+  "website_making",
   "website_health_check",
   "seo_optimization",
   "graphic_designing",
