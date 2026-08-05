@@ -111,7 +111,7 @@ export default function Home() {
             </h1>
 
             <p className="mt-5 max-w-md text-base leading-relaxed text-ink-soft">
-              Elventex is a small studio that designs, builds, and maintains
+              Elventex is a brand that run by developers and artist group  that designs, builds, and maintains
               websites — plus the SEO and graphics work that goes with them.
               One request, tracked start to finish.
             </p>
